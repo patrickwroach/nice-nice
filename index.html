@@ -9,8 +9,10 @@
     <div class="content-container highlight-color" id="nice-landing-wrapper">
    <div class="content">
        <div class="section">
-           <div class="copy-container" id="nice">
 
+           <div class="copy-container">
+                       <div id="nice">
+           </div>
            </div>
            
        </div>
@@ -21,14 +23,11 @@
        
             window.setInterval(
             function () {
-                
                 var node = document.createElement("P");
                 var textnode = document.createTextNode("nice");
                 node.appendChild(textnode);
                 document.getElementById("nice").appendChild(node);
-                var scroller = document.getElementById("bottom-anchor");
-                scroller.scrollIntoView();
-              
+     
                 
             }, 1000);
 

@@ -222,39 +222,37 @@ body {
 
 .content-container {
   width: 100%;
-  height:auto;
-  overflow:auto;
+  height: auto;
+  overflow: auto;
   margin: 0;
- 
+
   padding: 5vh 0;
 
   .content {
     width: @content-width;
     margin: 0 auto;
-    height:100%;
+    height: 100%;
 
     .section {
       width: 100%;
-      height:100%;
+      height: 100%;
       margin: 0;
       padding: 0;
       white-space: normal;
       display: table;
       text-align: center;
 
-   
-
       .copy-container,
       .image-container {
-        height:100%;
-        display:table-cell;
+        height: 100%;
+        display: table-cell;
         vertical-align: middle;
-        text-align:center;      
-      
+        text-align: center;
+
       }
 
-      .copy-container{ 
-        text-align:left;
+      .copy-container {
+        text-align: left;
       }
 
     }
@@ -284,11 +282,7 @@ body {
     margin-bottom: 0;
   }
 
-
 }
-
-
-
 
 //IDed Content Containers 
 
@@ -301,71 +295,100 @@ body {
   .content {
     position: relative;
     height: 95vh;
-    
+    display: table;
 
     .section {
-        display:table;
-        text-align:center;
-        
-        vertical-align: middle;
-      .copy-container{
-        display:table-cell;
-        text-align:center;
-        font-weight:bolder;
-        font-size:7vw;
-        line-height: 0%;
-        p{ 
-            display:inline-block;
-            margin: -1.5vw 1vw;
-            animation: entrance .25s ease-in;
-            text-align:center;
-            color: #ffe77d;
-            background-image: -webkit-linear-gradient(200deg,#f35626,#feab3a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            -webkit-animation: hue 60s infinite linear;
+      display: table-cell;
+
+      vertical-align: middle;
+
+      .copy-container {
+       
+        font-weight: bolder;
+        font-size: 7vw;
+        line-height: 0;
+
+        p {
+          display:inline-block;
+          overflow: hidden;
+          /* Ensures the content is not revealed until the animation */
+          
+          white-space: nowrap;
+          /* Keeps the content on a single line */
+          margin: -1.5vw 1vw;
+          /* Gives that scrolling effect as the typing happens */
+         
+          /* Adjust as needed */
+          animation: typing 1s steps(40, end), infinite;
+          border-right: .15em solid transparent; /* The typwriter cursor */
+          background-image: -webkit-linear-gradient(200deg,#f35626,#feab3a);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          
+          animation: typing .5s ease-out,  hue 60s infinite linear;
         }
-      }
-   
 
       }
-
     }
 
   }
-
-
-
-//Animations
-@keyframes entrance{
-  0% {
-    opacity:0;
-  }
-  
 
 }
-@-webkit-keyframes entrance {
-    0% {
-        opacity:0;
-      }
-      
-    
-    }
-    @keyframes hue {
-        from {
-          -webkit-filter: hue-rotate(0deg);
-        }
-        
-        to {
-          -webkit-filter: hue-rotate(240deg);
-        }
-    }
-    @-webkit-keyframes hue {
-        from {
-          -webkit-filter: hue-rotate(0deg);
-        }
-        
-        to {
-          -webkit-filter: hue-rotate(240deg);
-        }
-    }
+
+//Animations
+@keyframes hue {
+  0% {
+    -webkit-filter: hue-rotate(0deg);
+  }
+
+  100% {
+    -webkit-filter:hue-rotate(360deg);
+  }
+}
+@-webkit-keyframes hue {
+  0% {
+    -webkit-filter: hue-rotate(0deg);
+  }
+
+  100% {
+    -webkit-filter:hue-rotate(360deg);
+  }
+}
+@keyframes cursor {
+  0%, 25%, 50%, 75%  {
+    border-color: transparent;
+  }
+
+ 12%, 37%, 62%, 87%, 100% {
+   border-color: white;
+  }
+}
+@-webkit-keyframes  cursor {
+  0%, 25%, 50%, 75%  {
+    border-color: transparent;
+  }
+
+ 12%, 37%, 62%, 87%, 100% {
+   border-color: white;
+  }
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0vw;
+  }
+
+  to {
+    width: 13.5vw;
+  }
+}
+@-webkit-keyframes typing {
+  from {
+    width: 0vw;
+  }
+
+  to {
+    width: 13.5vw;
+  }
+}

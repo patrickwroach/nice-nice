@@ -245,53 +245,94 @@ body {
 #nice-landing-wrapper.content-container .content {
   position: relative;
   height: 95vh;
+  display: table;
 }
 #nice-landing-wrapper.content-container .content .section {
-  display: table;
-  text-align: center;
+  display: table-cell;
   vertical-align: middle;
 }
 #nice-landing-wrapper.content-container .content .section .copy-container {
-  display: table-cell;
-  text-align: center;
   font-weight: bolder;
   font-size: 7vw;
-  line-height: 0%;
+  line-height: 0;
 }
 #nice-landing-wrapper.content-container .content .section .copy-container p {
   display: inline-block;
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
   margin: -1.5vw 1vw;
-  animation: entrance 0.25s ease-in;
-  text-align: center;
-  color: #ffe77d;
+  /* Gives that scrolling effect as the typing happens */
+  /* Adjust as needed */
+  animation: typing 1s steps(40, end), infinite;
+  border-right: .15em solid transparent;
+  /* The typwriter cursor */
   background-image: -webkit-linear-gradient(200deg, #f35626, #feab3a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: hue 60s infinite linear;
-}
-@keyframes entrance {
-  0% {
-    opacity: 0;
-  }
-}
-@-webkit-keyframes entrance {
-  0% {
-    opacity: 0;
-  }
+  animation: typing 0.5s ease-out, hue 60s infinite linear;
 }
 @keyframes hue {
-  from {
+  0% {
     -webkit-filter: hue-rotate(0deg);
   }
-  to {
-    -webkit-filter: hue-rotate(240deg);
+  100% {
+    -webkit-filter: hue-rotate(360deg);
   }
 }
 @-webkit-keyframes hue {
-  from {
+  0% {
     -webkit-filter: hue-rotate(0deg);
   }
+  100% {
+    -webkit-filter: hue-rotate(360deg);
+  }
+}
+@keyframes cursor {
+  0%,
+  25%,
+  50%,
+  75% {
+    border-color: transparent;
+  }
+  12%,
+  37%,
+  62%,
+  87%,
+  100% {
+    border-color: white;
+  }
+}
+@-webkit-keyframes cursor {
+  0%,
+  25%,
+  50%,
+  75% {
+    border-color: transparent;
+  }
+  12%,
+  37%,
+  62%,
+  87%,
+  100% {
+    border-color: white;
+  }
+}
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0vw;
+  }
   to {
-    -webkit-filter: hue-rotate(240deg);
+    width: 13.5vw;
+  }
+}
+@-webkit-keyframes typing {
+  from {
+    width: 0vw;
+  }
+  to {
+    width: 13.5vw;
   }
 }
