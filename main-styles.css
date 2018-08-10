@@ -256,11 +256,19 @@ body {
   display: table-cell;
   text-align: center;
   font-weight: bolder;
-  font-size: 20vw;
+  font-size: 7vw;
+  line-height: 0%;
 }
 #nice-landing-wrapper.content-container .content .section .copy-container p {
+  display: inline-block;
+  margin: -1.5vw 1vw;
   animation: entrance 0.25s ease-in;
   text-align: center;
+  color: #ffe77d;
+  background-image: -webkit-linear-gradient(200deg, #f35626, #feab3a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: hue 60s infinite linear;
 }
 @keyframes entrance {
   0% {
@@ -270,5 +278,21 @@ body {
 @-webkit-keyframes entrance {
   0% {
     opacity: 0;
+  }
+}
+@keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(240deg);
+  }
+}
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(240deg);
   }
 }

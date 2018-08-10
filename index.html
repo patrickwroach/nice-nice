@@ -12,19 +12,27 @@
            <div class="copy-container" id="nice">
 
            </div>
+           
        </div>
+       <div id="bottom-anchor"></div>
    </div> 
    </div>
     <script>
-            var second = 0;
+       
             window.setInterval(
             function () {
-                second = second + 1;
+                
                 var node = document.createElement("P");
                 var textnode = document.createTextNode("nice");
                 node.appendChild(textnode);
                 document.getElementById("nice").appendChild(node);
-
+                var scroller = document.getElementById("bottom-anchor");
+                scroller.scrollIntoView();
+              
+                
             }, 1000);
+
+
+          
        </script>
 </body>
