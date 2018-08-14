@@ -246,32 +246,40 @@ body {
   position: relative;
   height: 95vh;
   display: table;
+  overflow: hidden;
 }
 #nice-landing-wrapper.content-container .content .section {
   display: table-cell;
+  text-align: center;
   vertical-align: middle;
 }
 #nice-landing-wrapper.content-container .content .section .copy-container {
   font-weight: bolder;
-  font-size: 7vw;
-  line-height: 0;
-}
-#nice-landing-wrapper.content-container .content .section .copy-container p {
   display: inline-block;
-  overflow: hidden;
+  margin: 0 auto;
+  line-height: 0;
+  text-align: center;
+}
+#nice-landing-wrapper.content-container .content .section .copy-container #nice {
+  display: inline-block;
+}
+#nice-landing-wrapper.content-container .content .section .copy-container #nice p {
+  text-align: center;
+  display: inline-block;
+  line-height: 75%;
+  transition: 100ms;
   /* Ensures the content is not revealed until the animation */
+  overflow: show;
   white-space: nowrap;
   /* Keeps the content on a single line */
-  margin: -1.5vw 1vw;
+  margin: 10px;
   /* Gives that scrolling effect as the typing happens */
   /* Adjust as needed */
-  animation: typing 1s steps(40, end), infinite;
-  border-right: .15em solid transparent;
-  /* The typwriter cursor */
   background-image: -webkit-linear-gradient(200deg, #f35626, #feab3a);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: typing 0.5s ease-out, hue 60s infinite linear;
+  animation: hue 30s infinite linear;
 }
 @keyframes hue {
   0% {

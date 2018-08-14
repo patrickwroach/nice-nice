@@ -296,37 +296,47 @@ body {
     position: relative;
     height: 95vh;
     display: table;
+    overflow: hidden;
 
     .section {
       display: table-cell;
-
+     
+      text-align:center;
       vertical-align: middle;
 
       .copy-container {
        
         font-weight: bolder;
-        font-size: 7vw;
+      
+        display: inline-block;
+        margin:0 auto;
         line-height: 0;
+        text-align:center;
+        #nice{
+          display:inline-block;
 
         p {
+          text-align:center;
           display:inline-block;
-          overflow: hidden;
+          line-height: 75%;
+          transition: 100ms;
           /* Ensures the content is not revealed until the animation */
-          
+          overflow: show;
           white-space: nowrap;
           /* Keeps the content on a single line */
-          margin: -1.5vw 1vw;
+          margin: 10px;
           /* Gives that scrolling effect as the typing happens */
          
           /* Adjust as needed */
-          animation: typing 1s steps(40, end), infinite;
-          border-right: .15em solid transparent; /* The typwriter cursor */
+          // animation: typing 1s steps(40, end), infinite;
+          // border-right: .15em solid transparent; /* The typwriter cursor */
           background-image: -webkit-linear-gradient(200deg,#f35626,#feab3a);
+          background-clip: text;
           -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          
-          animation: typing .5s ease-out,  hue 60s infinite linear;
+          -webkit-text-fill-color: transparent;          
+          animation:hue 30s infinite linear;
         }
+      }
 
       }
     }
