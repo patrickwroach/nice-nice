@@ -245,29 +245,29 @@ body {
 #nice-landing-wrapper.content-container .content {
   position: relative;
   height: 95vh;
-  display: table;
   overflow: hidden;
 }
 #nice-landing-wrapper.content-container .content .section {
-  display: table-cell;
   text-align: center;
-  vertical-align: middle;
 }
 #nice-landing-wrapper.content-container .content .section .copy-container {
+  display: table;
   font-weight: bolder;
-  display: inline-block;
+  height: 95vh;
   margin: 0 auto;
   line-height: 0;
   text-align: center;
 }
 #nice-landing-wrapper.content-container .content .section .copy-container #nice {
-  display: inline-block;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
 }
 #nice-landing-wrapper.content-container .content .section .copy-container #nice p {
   text-align: center;
   display: inline-block;
   line-height: 75%;
-  transition: 100ms;
+  transition: 400ms;
   /* Ensures the content is not revealed until the animation */
   overflow: show;
   white-space: nowrap;
@@ -279,7 +279,7 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: hue 30s infinite linear;
+  animation: hue 30s infinite linear, appear 0.1s ease-in 1;
 }
 @keyframes hue {
   0% {
@@ -328,19 +328,8 @@ body {
   }
 }
 /* The typing effect */
-@keyframes typing {
-  from {
-    width: 0vw;
-  }
-  to {
-    width: 13.5vw;
-  }
-}
-@-webkit-keyframes typing {
-  from {
-    width: 0vw;
-  }
-  to {
-    width: 13.5vw;
+@keyframes appear {
+  0% {
+    transform: scale(0);
   }
 }
